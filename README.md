@@ -4,6 +4,8 @@
 
 ## Norsk
 
+**[Installasjonsveiledning: Codex, ChatGPT, Claude og GitHub Copilot](docs/installasjon.md)**
+
 Contech Editorial er en Codex-plugin for å laste opp videoer og lage private tekstutkast for Contech Norway. Pakken inneholder tilkoblingen til MCP-tjenesten og redaktør-skillen `editorial-drafts`. Nettsidens kildekode, medlemsinnhold og innloggingsopplysninger er ikke inkludert.
 
 ### Installere
@@ -40,6 +42,8 @@ Har du allerede en lokal katalog kalt `contech-norway`, kontroller `codex plugin
 Pluginen er offentlig tilgjengelig her, men er ikke oppført i OpenAIs offentlige plugin-katalog. MCP-tjenesten krever personlig innlogging. Ingen databasepassord eller API-nøkler skal deles eller legges i pakken.
 
 ## English
+
+**[Installation guide: Codex, ChatGPT, Claude and GitHub Copilot](docs/installation.en.md)**
 
 Contech Editorial is a Codex plugin for video uploads and private editorial drafts for Contech Norway. It bundles the remote MCP connection and the `editorial-drafts` skill. Website source code, member content and credentials are not included.
 
