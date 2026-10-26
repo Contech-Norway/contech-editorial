@@ -1,6 +1,8 @@
-# Installer Contech Editorial
+# Koble KI-assistenten din til Contech Editorial
 
 [English](installation.en.md) · Kontrollert mot leverandørdokumentasjon 26. oktober 2026.
+
+Contech Editorial er en redaktørintegrasjon for videoopplasting og private tekstutkast. Flere KI-assistenter bruker samme MCP-tjeneste. Velg bare oppskriften for klienten din: Codex har en egen plugin med skill, mens de øvrige oppskriftene kobler klienten direkte til tjenesten.
 
 ## Før du begynner
 
