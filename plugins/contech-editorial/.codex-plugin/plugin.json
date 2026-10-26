@@ -1,0 +1,25 @@
+{
+  "name": "contech-editorial",
+  "version": "0.1.0",
+  "description": "Private video and article drafts for Contech Norway, with an editorial workflow and personal OAuth access.",
+  "author": { "name": "Contech Norway" },
+  "homepage": "https://www.contechnorway.com",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Contech Editorial",
+    "shortDescription": "Fra video til norske og engelske tekstutkast",
+    "longDescription": "Last opp video, hent transkripsjon og lag private tekstutkast på norsk og engelsk. Redaktøren gjennomgår og publiserer på Contech Norway. Krever personlig redaktørtilgang og aktivt bedriftsmedlemskap.",
+    "developerName": "Contech Norway",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "logo": "./assets/contech-norway.png",
+    "websiteURL": "https://www.contechnorway.com",
+    "privacyPolicyURL": "https://www.contechnorway.com/personvern",
+    "defaultPrompt": [
+      "Sjekk forbindelsen og hent redaktørveiledningen uten å endre innhold.",
+      "Hjelp meg å laste opp en video og lage norske og engelske tekstutkast.",
+      "Lag et privat fagartikkelutkast fra kildene mine."
+    ]
+  }
+}

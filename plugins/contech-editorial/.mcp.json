@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "contech-editorial": {
+      "url": "https://www.contechnorway.com/api/mcp"
+    }
+  }
+}

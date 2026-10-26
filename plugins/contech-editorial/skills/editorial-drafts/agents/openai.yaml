@@ -1,0 +1,4 @@
+interface:
+  display_name: "Contech-redaktør"
+  short_description: "Fra video og kilder til private tekstutkast"
+  default_prompt: "Bruk $editorial-drafts til å forberede et privat utkast for Contech Norway fra videoen eller kildene mine."
