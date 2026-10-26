@@ -1,6 +1,8 @@
-# Install Contech Editorial
+# Connect your AI assistant to Contech Editorial
 
 [Norsk](installasjon.md) · Checked against vendor documentation on 26 October 2026.
+
+Contech Editorial is an editorial integration for video uploads and private drafts. Multiple AI assistants use the same MCP service. Follow only the instructions for your client: Codex has a plugin with a skill, while the other instructions connect directly to the service.
 
 ## Before you start
 
