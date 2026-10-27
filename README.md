@@ -6,7 +6,7 @@
 
 **[Installasjonsveiledning: Codex, ChatGPT, Claude og GitHub Copilot](docs/installasjon.md)**
 
-Contech Editorial er en Codex-plugin for å laste opp videoer og lage private tekstutkast for Contech Norway. Pakken inneholder tilkoblingen til MCP-tjenesten og redaktør-skillen `editorial-drafts`. Nettsidens kildekode, medlemsinnhold og innloggingsopplysninger er ikke inkludert.
+Contech Editorial er en plugin for å laste opp videoer og lage private tekstutkast for Contech Norway. Pakken inneholder tilkoblingen til MCP-tjenesten og redaktør-skillen `editorial-drafts`. Nettsidens kildekode, medlemsinnhold og innloggingsopplysninger er ikke inkludert.
 
 ### Installere
 
