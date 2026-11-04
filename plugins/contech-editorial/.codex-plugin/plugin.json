@@ -1,6 +1,6 @@
 {
   "name": "contech-editorial",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Private video and article drafts for Contech Norway, with an editorial workflow and personal OAuth access.",
   "author": { "name": "Contech Norway" },
   "homepage": "https://www.contechnorway.com",
@@ -9,7 +9,7 @@
   "interface": {
     "displayName": "Contech Editorial",
     "shortDescription": "Fra video til norske og engelske tekstutkast",
-    "longDescription": "Last opp video, hent transkripsjon og lag private tekstutkast på norsk og engelsk. Redaktøren gjennomgår og publiserer på Contech Norway. Krever personlig redaktørtilgang og aktivt bedriftsmedlemskap.",
+    "longDescription": "Last opp video, lag transkripsjon med agentens medieverktøy og lag private tekstutkast på norsk og engelsk. Redaktøren gjennomgår og publiserer på Contech Norway. Krever personlig redaktørtilgang og aktivt bedriftsmedlemskap.",
     "developerName": "Contech Norway",
     "category": "Productivity",
     "capabilities": ["Read", "Write"],
