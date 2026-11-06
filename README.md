@@ -37,6 +37,10 @@ Start Codex på nytt. Åpne en ny samtale, skriv `@` og velg **Contech Editorial
 
 Hvis `codex` eller plugin-kommandoen mangler, få Codex CLI installert eller oppdatert før du fortsetter. [Offisiell Codex CLI-veiledning](https://developers.openai.com/codex/cli/).
 
+### Transkripsjon og ferdige utkast
+
+Agenten anbefales å transkribere direkte fra lyd og gjennomgå filmen med tidskodede skjermbilder. Mux-transkripsjon brukes som tekstkilde bare når brukeren uttrykkelig ønsker det. Dette krever medietilgang og egnede verktøy i klienten. Skillen slår ikke av automatisk Mux-teksting i dagens opplastingstjeneste. Agenten skal lagre transkripsjon som undertekstforslag, skrive og validere utkast via MCP og levere lenke til menneskelig gjennomgang og publisering. Se [arbeidsflyt og begrensninger](docs/installasjon.md#skills-og-første-video).
+
 ### Første test
 
 Med Contech Editorial-tilkoblingen valgt, send:
@@ -80,6 +84,10 @@ This repository contains client guides, the Codex plugin connection configuratio
 You need Codex, a Codex CLI version supporting `codex plugin`, and Git to fetch the repository. No GitHub account or access to the private website repository is required. Run the two commands above, restart Codex, open a new conversation and select **Contech Editorial** using `@`.
 
 Complete sign-in and authorise access with your own Contech account. You need a verified email address, active company membership and the **Bidragsyter** (contributor) role. Installing the plugin does not grant these permissions. If the CLI or plugin command is missing, install or update the CLI first using the [official guide](https://developers.openai.com/codex/cli/).
+
+### Transcription and completed drafts
+
+The agent should transcribe audio directly and review the video with timestamped screenshots. Use Mux transcripts as source text only on explicit user request. This requires media access and suitable client tools. The skill does not disable automatic Mux captions in the current upload service. The agent should save the transcript as a caption proposal, write and validate drafts through MCP, then provide a link for human review and publication. See [workflow and limitations](docs/installation.en.md#skills-and-your-first-video).
 
 ### First test
 
