@@ -4,7 +4,7 @@
 
 ## Norsk
 
-**[Installasjonsveiledning: Codex, ChatGPT, Claude og GitHub Copilot](docs/installasjon.md)**
+**[Installasjonsveiledning: Codex, ChatGPT, Claude, GitHub Copilot og Microsoft Copilot Studio](docs/installasjon.md)**
 
 Contech Editorial gir KI-hjelp til videoopplasting og redaksjonelle tekstutkast for Contech Norway. Integrasjonen bruker en felles MCP-tjeneste som flere KI-assistenter kan koble seg til. Alt agenten lagrer, er private utkast; mennesker gjennomgår og publiserer på nettstedet.
 
@@ -17,6 +17,7 @@ Contech Editorial gir KI-hjelp til videoopplasting og redaksjonelle tekstutkast 
 | Claude / Claude Desktop | Legg til en egen connector |
 | Claude Code | Legg til MCP-tjenesten via terminalen |
 | GitHub Copilot i VS Code | Legg til MCP-tjenesten i en agentsamtale |
+| Microsoft Copilot Studio | [Legg til MCP som verktøy i en agent](docs/installasjon.md#microsoft-copilot-studio) |
 
 Se [installasjonsveiledningen](docs/installasjon.md) for fremgangsmåte, kontokrav og teststatus. Oppsettene utenfor Codex er dokumentert, men ikke testet ende til ende hos Contech. Direkte MCP-tilkobling installerer ikke Codex-skillen automatisk; alle klientene skal hente `get_editorial_guide` før de skriver.
 
@@ -61,7 +62,7 @@ Codex-pluginen er offentlig tilgjengelig her, men er ikke oppført i OpenAIs off
 
 ## English
 
-**[Installation guide: Codex, ChatGPT, Claude and GitHub Copilot](docs/installation.en.md)**
+**[Installation guide: Codex, ChatGPT, Claude, GitHub Copilot and Microsoft Copilot Studio](docs/installation.en.md)**
 
 Contech Editorial provides AI assistance with video uploads and editorial drafts for Contech Norway. The integration uses a shared MCP service that multiple AI assistants can connect to. Everything the agent saves remains a private draft; people review and publish on the website.
 
@@ -74,6 +75,7 @@ Contech Editorial provides AI assistance with video uploads and editorial drafts
 | Claude / Claude Desktop | Add a custom connector |
 | Claude Code | Add the MCP service through the terminal |
 | GitHub Copilot in VS Code | Add the MCP service to an agent conversation |
+| Microsoft Copilot Studio | [Add MCP as a tool in an agent](docs/installation.en.md#microsoft-copilot-studio) |
 
 See the [installation guide](docs/installation.en.md) for instructions, account requirements and verification status. Setups outside Codex are documented but have not been tested end to end by Contech. Direct MCP connections do not install the Codex skill automatically; every client should fetch `get_editorial_guide` before drafting.
 
