@@ -17,8 +17,9 @@ You also need access to your chosen client. Plans and organisation policies may 
 | Claude / Claude Desktop | Custom connector | Documentation-based instructions; not tested end to end |
 | Claude Code | Terminal MCP setup | Documentation-based instructions; not tested end to end |
 | GitHub Copilot in VS Code | MCP in an agent conversation | Documentation-based instructions; not tested end to end |
+| Microsoft Copilot Studio | MCP tool in a Studio agent | Documentation-based instructions; not tested end to end |
 
-A complete video acceptance test covering upload, transcription, saving and review remains outstanding. The Copilot instructions cover **GitHub Copilot in VS Code**, not Microsoft 365 Copilot.
+A complete video acceptance test covering upload, transcription, saving and review remains outstanding. Separate instructions cover **GitHub Copilot in VS Code** and **Microsoft Copilot Studio**. The Studio instructions configure an agent, rather than installing directly into Microsoft 365 Copilot.
 
 ## Shared connection details
 
@@ -77,6 +78,57 @@ Open Claude Code, run `/mcp`, select the server and finish browser sign-in. Then
 4. Open a Copilot agent conversation, check tool availability and run the test.
 
 If options are missing, check VS Code version and organisational MCP policies. [Microsoft's guide](https://code.visualstudio.com/docs/agent-customization/mcp-servers).
+
+## Microsoft Copilot Studio
+
+Checked against Microsoft documentation on 12 November 2026; not tested end to end by Contech. This connects a Copilot Studio agent to the same MCP service. Neither GitHub access nor the Codex plugin is required.
+
+You need permission to edit a Copilot Studio agent and the Contech access described above.
+
+1. Open your agent in [Copilot Studio](https://copilotstudio.microsoft.com/).
+2. Select **Tools → Add a tool → New tool → Model Context Protocol**.
+3. Enter the values below.
+4. Select **Create → Next**, create a connection and complete personal Contech sign-in. Select **Add to agent**.
+
+| Field | Value |
+| --- | --- |
+| Server name | `Contech Editorial` |
+| Server description | Private video and article drafts for Contech Norway. Users review and publish on the website. |
+| Server URL | `https://www.contechnorway.com/api/mcp` |
+| Authentication | `OAuth 2.0` |
+| OAuth type | `Dynamic discovery` |
+
+Automatic client registration should discover the OAuth configuration. Organisational Power Platform policies may block the connection; contact your administrator if that happens. [Microsoft's instructions](https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-add-existing-server-to-agent).
+
+In the new experience (preview), use **Build → Tools → Add tool → Add → Model Context Protocol**. [Microsoft's guide to the new experience](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/tools-add-mcp-server).
+
+### Agent instructions
+
+The Codex skill is not installed automatically. Add this to the agent's **Instructions**:
+
+```text
+Fetch get_editorial_guide before editorial work and follow its guidance.
+Use MCP to retrieve content and save private drafts. Validate with validate_draft.
+
+Prefer your own transcription from actual audio when you have access and suitable
+tools. Review the whole video in time windows with timestamped screenshots.
+Do not infer speech from images. Report missing access, uncertainty and gaps.
+Use Mux transcripts only when the user explicitly requests them.
+
+Follow the guide's language requirements, including English translations where required.
+Save transcripts as private caption proposals. Request upload through browser_url
+if you cannot transfer the file directly. Avoid recreating existing videos.
+
+When the draft is ready, validate it and give the user the editor link for review
+and publication. Do not publish or mark content as reviewed by a human.
+Only claim content was saved or uploaded when a tool has confirmed it.
+```
+
+### First test and video
+
+Run the [connection test](#test-before-uploading) in the test chat. Check the execution trace to confirm that `get_editorial_guide` was actually invoked and returned a response before attempting saves or uploads. Then test with the starter prompt under [Skills and your first video](#skills-and-your-first-video).
+
+The MCP connection alone does not provide video analysis, audio understanding or chat-file transfer. Test these capabilities separately in Copilot Studio. Use the upload link if direct transfer is unavailable. The backend still requests Mux captions automatically; the instructions control the agent's transcript source and do not disable that behaviour.
 
 ## Test before uploading
 
