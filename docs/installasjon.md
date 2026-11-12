@@ -17,8 +17,9 @@ Du trenger også tilgang til klienten du velger. Abonnement og organisasjonens i
 | Claude / Claude Desktop | Egen connector | Dokumentert oppskrift; ikke testet ende til ende |
 | Claude Code | MCP via terminal | Dokumentert oppskrift; ikke testet ende til ende |
 | GitHub Copilot i VS Code | MCP i agentsamtale | Dokumentert oppskrift; ikke testet ende til ende |
+| Microsoft Copilot Studio | MCP-verktøy i en Studio-agent | Dokumentert oppskrift; ikke testet ende til ende |
 
-En full videotest med opplasting, transkripsjon, lagring og gjennomgang gjenstår som samlet akseptansetest. Copilot-oppskriften gjelder **GitHub Copilot i VS Code**, ikke Microsoft 365 Copilot.
+En full videotest med opplasting, transkripsjon, lagring og gjennomgang gjenstår som samlet akseptansetest. Det finnes separate oppskrifter for **GitHub Copilot i VS Code** og **Microsoft Copilot Studio**. Studio-oppskriften gjelder oppsett av en agent, ikke direkte installasjon i Microsoft 365 Copilot.
 
 ## Felles tilkoblingsinformasjon
 
@@ -77,6 +78,57 @@ claude mcp add --transport http --scope user contech-editorial https://www.conte
 4. Åpne en Copilot-agentsamtale, kontroller at serverens verktøy er tilgjengelige, og kjør testen.
 
 Mangler valgene, sjekk VS Code-versjon og organisasjonens MCP-regler. [Microsofts veiledning](https://code.visualstudio.com/docs/agent-customization/mcp-servers).
+
+## Microsoft Copilot Studio
+
+Kontrollert mot Microsofts dokumentasjon 12. november 2026; ikke testet ende til ende hos Contech. Dette kobler en agent i Copilot Studio til samme MCP-tjeneste. GitHub-tilgang og Codex-pluginen er ikke nødvendig.
+
+Du trenger redigeringstilgang til en Copilot Studio-agent og Contech-tilgangen beskrevet ovenfor.
+
+1. Åpne agenten i [Copilot Studio](https://copilotstudio.microsoft.com/).
+2. Velg **Tools → Add a tool → New tool → Model Context Protocol**.
+3. Fyll inn feltene under.
+4. Velg **Create → Next**, opprett en forbindelse og fullfør personlig Contech-innlogging. Velg **Add to agent**.
+
+| Felt | Verdi |
+| --- | --- |
+| Server name | `Contech Editorial` |
+| Server description | Private video- og artikkelutkast for Contech Norway. Brukeren gjennomgår og publiserer på nettstedet. |
+| Server URL | `https://www.contechnorway.com/api/mcp` |
+| Authentication | `OAuth 2.0` |
+| OAuth type | `Dynamic discovery` |
+
+Automatisk klientregistrering skal finne OAuth-oppsettet. Organisasjonens Power Platform-regler kan blokkere tilkoblingen; kontakt administrator ved en slik feilmelding. [Microsofts oppskrift](https://learn.microsoft.com/en-us/microsoft-copilot-studio/mcp-add-existing-server-to-agent).
+
+I det nye grensesnittet (forhåndsversjon) er inngangen **Build → Tools → Add tool → Add → Model Context Protocol**. [Microsofts veiledning for det nye grensesnittet](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/tools-add-mcp-server).
+
+### Instruksjoner til agenten
+
+Codex-skillen installeres ikke automatisk. Legg dette i agentens **Instructions**:
+
+```text
+Hent get_editorial_guide før redaksjonelt arbeid og følg veiledningen.
+Bruk MCP til å hente innhold og lagre private utkast. Valider med validate_draft.
+
+Foretrekk egen transkripsjon fra faktisk lyd hvis du har tilgang og egnede
+verktøy. Gjennomgå hele videoen i tidsvinduer med tidskodede skjermbilder.
+Ikke utled tale fra bilder. Oppgi manglende tilgang, usikkerhet og hull.
+Bruk Mux-transkripsjonen bare når brukeren uttrykkelig ønsker det.
+
+Følg språkkravene i veiledningen, inkludert engelsk oversettelse der det kreves.
+Lagre transkripsjon som privat undertekstforslag. Be om opplasting via browser_url
+hvis du ikke kan overføre filen direkte. Unngå å opprette eksisterende videoer på nytt.
+
+Når utkastet er klart, valider det og gi brukeren redaktørlenken for gjennomgang
+og publisering. Ikke publiser eller merk innhold som menneskelig gjennomgått.
+Påstå bare at noe er lagret eller lastet opp når verktøyet har bekreftet det.
+```
+
+### Første test og video
+
+Kjør [forbindelsestesten](#test-forbindelsen-før-opplasting) i testchatten. Kontroller i kjøringsloggen at `get_editorial_guide` faktisk ble kalt og svarte, før du prøver å lagre eller laste opp. Test deretter med startteksten under [Skills og første video](#skills-og-første-video).
+
+MCP-tilkoblingen gir ikke i seg selv evnen til å analysere video, høre lyd eller overføre en chatfil. Disse egenskapene må testes separat i Copilot Studio. Bruk opplastingslenken hvis direkte overføring ikke støttes. Backend bestiller fortsatt Mux-undertekster automatisk; instruksjonen styrer agentens tekstkilde og slår ikke av denne funksjonen.
 
 ## Test forbindelsen før opplasting
 
