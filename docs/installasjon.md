@@ -4,9 +4,11 @@
 
 Contech Editorial er en redaktørintegrasjon for videoopplasting og private tekstutkast. Flere KI-assistenter bruker samme MCP-tjeneste. Velg bare oppskriften for klienten din: Codex har en egen plugin med skill, mens de øvrige oppskriftene kobler klienten direkte til tjenesten.
 
+Se [promo, kommentarer og sprint](sprint-mcp.md) for de nye arbeidsflytene. Lesere kan bruke sprint og kommentarer; redaksjonell opplasting krever bidragsyter. Bruk `get_sprint_guide` til forbindelsestest som leser. Godkjenn nytt samtykke ved oppgradering.
+
 ## Før du begynner
 
-Du trenger en personlig Contech-konto med bekreftet e-post, rollen **Bidragsyter** og aktivt bedriftsmedlemskap. Godta invitasjonen og sjekk at du kommer inn på [redaktørsiden](https://www.contechnorway.com/redaktor). Bruk samme e-postadresse når du kobler til agenten.
+Du trenger en personlig Contech-konto med bekreftet e-post, aktivt bedriftsmedlemskap og rollen **Bidragsyter** for redaksjonelt arbeid (leser er tilstrekkelig for sprint og kommentarer). Godta invitasjonen og sjekk at du kommer inn på [redaktørsiden](https://www.contechnorway.com/redaktor). Bruk samme e-postadresse når du kobler til agenten.
 
 Du trenger også tilgang til klienten du velger. Abonnement og organisasjonens innstillinger kan begrense egne tilkoblinger. Ingen trenger tilgang til nettstedets private GitHub-repo, databasepassord eller servernøkler.
 
