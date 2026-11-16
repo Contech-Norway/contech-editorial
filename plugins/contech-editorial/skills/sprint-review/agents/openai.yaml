@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gjennomgå sprint"
+  short_description: "Promofilmer og kommentarer til diskusjonsdagen"
+  default_prompt: "Bruk $sprint-review til å gjennomgå sprinten én video om gangen."

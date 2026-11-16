@@ -1,25 +1,31 @@
 {
   "name": "contech-editorial",
-  "version": "0.2.0",
-  "description": "Private video and article drafts for Contech Norway, with an editorial workflow and personal OAuth access.",
-  "author": { "name": "Contech Norway" },
+  "version": "0.3.0",
+  "description": "Editorial drafts, video and promo uploads, member comments and guided sprint preparation for Contech Norway.",
+  "author": {
+    "name": "Contech Norway"
+  },
   "homepage": "https://www.contechnorway.com",
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Contech Editorial",
-    "shortDescription": "Fra video til norske og engelske tekstutkast",
-    "longDescription": "Last opp video, lag transkripsjon med agentens medieverktøy og lag private tekstutkast på norsk og engelsk. Redaktøren gjennomgår og publiserer på Contech Norway. Krever personlig redaktørtilgang og aktivt bedriftsmedlemskap.",
+    "shortDescription": "Video, promofilm, kommentarer og sprintforberedelse",
+    "longDescription": "Last opp fullvideo og promo, lag private redaksjonelle utkast og forbered eller gjennomgå sprinter. Lesere og bidragsytere kan dele egne kommentarer etter godkjenning og lagre privat fremdrift. Redaksjonelt arbeid krever bidragsyter; publisering skjer på nettstedet.",
     "developerName": "Contech Norway",
     "category": "Productivity",
-    "capabilities": ["Read", "Write"],
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
     "logo": "./assets/contech-norway.png",
     "websiteURL": "https://www.contechnorway.com",
     "privacyPolicyURL": "https://www.contechnorway.com/personvern",
     "defaultPrompt": [
-      "Sjekk forbindelsen og hent redaktørveiledningen uten å endre innhold.",
-      "Hjelp meg å laste opp en video og lage norske og engelske tekstutkast.",
-      "Lag et privat fagartikkelutkast fra kildene mine."
+      "Hent sprintveiledningen og sjekk forbindelsen uten å endre innhold.",
+      "Hjelp meg å laste opp fullvideo og en kort promofilm som private utkast.",
+      "La meg forberede meg på denne ukens sprint.",
+      "Gjennomgå sprinten med promofilmer og kommentarer, én video om gangen."
     ]
   }
 }

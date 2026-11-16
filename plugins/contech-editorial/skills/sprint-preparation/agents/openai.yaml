@@ -1,0 +1,4 @@
+interface:
+  display_name: "Forbered sprint"
+  short_description: "Se fullvideoer og forbered medlemskommentarer"
+  default_prompt: "Bruk $sprint-preparation til å forberede meg på denne ukens sprint."

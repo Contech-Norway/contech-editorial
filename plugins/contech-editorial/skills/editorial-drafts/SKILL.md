@@ -1,6 +1,6 @@
 ---
 name: editorial-drafts
-description: Last opp videoer og lag eller forbedre private video- og fagartikkelutkast for Contech Norway via Contech Editorial MCP. Bruk også for kontroll av forbindelsen og redaksjonell gjennomgang av eksisterende utkast.
+description: Last opp fullvideoer og korte promofilmer, og lag eller forbedre private video- og fagartikkelutkast for Contech Norway via Contech Editorial MCP. Bruk også for kontroll av forbindelsen og redaksjonell gjennomgang av eksisterende utkast.
 ---
 
 # Contech Editorial
@@ -41,4 +41,13 @@ Bruk pluginens Contech Editorial MCP-verktøy. Start med `get_editorial_guide` f
 - Gjør det autoriserte arbeidet ferdig gjennom MCP: opprett eller hent riktig utkast, lagre undertekstforslag, fyll ut relevante tekster på begge offentlige språk, lagre og valider. Ikke be brukeren kopiere tekster manuelt når et tilgjengelig MCP-verktøy kan lagre dem. Direkte binæropplasting og medieanalyse skjer med klientens fil-/medieverktøy; bruk `browser_url` bare når filoverføring krever brukerens hjelp. Ikke opprett ekstra innhold utenfor oppgaven.
 - Kall `validate_draft` for hvert utkast du har endret. Rapporter mangler og hva redaktøren må kontrollere. Validering er ikke godkjenning eller publisering.
 - Når arbeidet er lagret og validert, avslutt med lenke til returnert `editor_path` under `https://www.contechnorway.com`, hva som er lagret, eventuelle kildeusikkerheter og menneskelige kontrollpunkter. Oppgi tydelig om opplasting eller transkripsjon fortsatt venter. Si «klart for din gjennomgang og publisering» bare når alle agentoppgaver er fullført; oppgi eventuelle gjenstående menneskelige godkjenninger, inkludert kontroll og overføring av undertekstforslaget til spilleren.
-- Pluginen lagrer private utkast. Gjennomgang og publisering skjer på nettstedet; ikke omgå dette med nettleserautomatisering eller andre verktøy som del av denne arbeidsflyten.
+- Denne redaksjonelle arbeidsflyten lagrer private utkast. Kommentarverktøyene i sprintflytene deler derimot kommentarer med medlemmer. Gjennomgang og publisering skjer på nettstedet; ikke omgå dette med nettleserautomatisering eller andre verktøy som del av denne arbeidsflyten.
+
+## Promofilm som del av videoutkastet
+
+- Promo er en separat, kort introduksjonsfilm knyttet til samme video. Bruk eksisterende video-ID; ikke erstatt fullvideoen eller opprett en ekstra video for promoen. Avklar hva en vedlagt film er ment som hvis det er uklart.
+- Hent `get_editorial_guide` og `get_content`. Opprett vanlig videoutkast først bare dersom videoen ikke finnes.
+- Bruk `create_promo_upload` med video-ID, faktisk talespråk og ny idempotensnøkkel. Gjenbruk nøkkel og språk ved retry. Overfør binærfilen med PUT, eller lever `browser_url` når direkte overføring mangler.
+- Hent `get_promo_status` i separate kall. Anbefalt lengde er 15–45 sekunder, hard grense 60. Oppgi behandlingsfeil, manglende undertekster og menneskelig kontrollbehov. Publisert promo blir stående mens erstatningen behandles.
+- Fullvideoens `save_caption_draft` gjelder ikke promo. Ikke lagre promoundertekster over fullvideoens undertekster. Dagens promo krever ferdig Mux-tekstspor; feil rettes i Mux før menneskelig gjennomgang.
+- Lever redaktørlenken med promostatus. Publisering eller avpublisering av promo gjøres av mennesket på nettstedet.

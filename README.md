@@ -6,7 +6,9 @@
 
 **[Installasjonsveiledning: Codex, ChatGPT, Claude, GitHub Copilot og Microsoft Copilot Studio](docs/installasjon.md)**
 
-Contech Editorial gir KI-hjelp til videoopplasting og redaksjonelle tekstutkast for Contech Norway. Integrasjonen bruker en felles MCP-tjeneste som flere KI-assistenter kan koble seg til. Alt agenten lagrer, er private utkast; mennesker gjennomgår og publiserer på nettstedet.
+Contech Editorial gir KI-hjelp til videoopplasting og redaksjonelle tekstutkast for Contech Norway. Integrasjonen bruker en felles MCP-tjeneste som flere KI-assistenter kan koble seg til. Redaksjonelt innhold lagres som private utkast; kommentarer deles med medlemmer etter brukerens godkjenning, og sprintfremdrift er privat.
+
+Se også [promo, kommentarer og sprint](docs/sprint-mcp.md). Versjon 0.3.0 krever den nye tjenesteutvidelsen; eksisterende forbindelser må samtykke på nytt for kommentarer.
 
 ### Velg tilkobling
 
@@ -34,7 +36,7 @@ codex plugin marketplace add https://github.com/Contech-Norway/contech-editorial
 codex plugin add contech-editorial@contech-norway
 ```
 
-Start Codex på nytt. Åpne en ny samtale, skriv `@` og velg **Contech Editorial**. Fullfør eventuell innlogging med din egen Contech-konto og godkjenn agenttilgangen. Du må ha bekreftet e-post, aktivt bedriftsmedlemskap og rollen **Bidragsyter**. Installasjonen gir ikke disse rettighetene.
+Start Codex på nytt. Åpne en ny samtale, skriv `@` og velg **Contech Editorial**. Fullfør eventuell innlogging med din egen Contech-konto og godkjenn agenttilgangen. Du må ha bekreftet e-post, aktivt bedriftsmedlemskap og rollen **Bidragsyter** for redaksjonelt arbeid. Lesere kan bruke kommentarer og sprintverktøy. Installasjonen gir ikke disse rettighetene.
 
 Hvis `codex` eller plugin-kommandoen mangler, få Codex CLI installert eller oppdatert før du fortsetter. [Offisiell Codex CLI-veiledning](https://developers.openai.com/codex/cli/).
 
@@ -50,7 +52,7 @@ Med Contech Editorial-tilkoblingen valgt, send:
 
 Velg deretter en kort video, oppgi filen eller filbanen, tema og talespråk, og be om opplasting og tekstutkast. Offentlig tekst skrives på bokmål og britisk engelsk. Agenten kan gi en nettleserlenke hvis direkte filopplasting ikke støttes. Har du allerede lastet opp filmen, oppgi lenken til eksisterende utkast for å unngå en kopi.
 
-Alt agenten lagrer, forblir private utkast. Kontroller video, undertekster, navn, fakta og oversettelse på [redaktørsiden](https://www.contechnorway.com/redaktor) før du publiserer. Pitchen er offentlig etter publisering; videoen og medlemsoppsummeringen krever medlemskap. En publisert fagartikkel er offentlig. [Tilbakekall agenttilgang](https://www.contechnorway.com/redaktor/agenter).
+Redaksjonelt innhold lagres som private utkast. Kontroller video, undertekster, navn, fakta og oversettelse på [redaktørsiden](https://www.contechnorway.com/redaktor) før du publiserer. Pitchen er offentlig etter publisering; videoen og medlemsoppsummeringen krever medlemskap. En publisert fagartikkel er offentlig. [Tilbakekall agenttilgang](https://www.contechnorway.com/redaktor/agenter).
 
 ### Oppdateringer og eksisterende Codex-installasjoner
 
@@ -64,7 +66,9 @@ Codex-pluginen er offentlig tilgjengelig her, men er ikke oppført i OpenAIs off
 
 **[Installation guide: Codex, ChatGPT, Claude, GitHub Copilot and Microsoft Copilot Studio](docs/installation.en.md)**
 
-Contech Editorial provides AI assistance with video uploads and editorial drafts for Contech Norway. The integration uses a shared MCP service that multiple AI assistants can connect to. Everything the agent saves remains a private draft; people review and publish on the website.
+Contech Editorial provides AI assistance with video uploads and editorial drafts for Contech Norway. The integration uses a shared MCP service that multiple AI assistants can connect to. Editorial content remains private drafts; comments are shared with members after user approval, and sprint progress is private.
+
+See [promos, comments and sprints](docs/sprint-mcp.en.md). Version 0.3.0 requires the new service extension; existing connections need renewed consent for comments.
 
 ### Choose a connection
 
@@ -85,7 +89,7 @@ This repository contains client guides, the Codex plugin connection configuratio
 
 You need Codex, a Codex CLI version supporting `codex plugin`, and Git to fetch the repository. No GitHub account or access to the private website repository is required. Run the two commands above, restart Codex, open a new conversation and select **Contech Editorial** using `@`.
 
-Complete sign-in and authorise access with your own Contech account. You need a verified email address, active company membership and the **Bidragsyter** (contributor) role. Installing the plugin does not grant these permissions. If the CLI or plugin command is missing, install or update the CLI first using the [official guide](https://developers.openai.com/codex/cli/).
+Complete sign-in and authorise access with your own Contech account. You need a verified email address, active company membership and the **Bidragsyter** (contributor) role for editorial work. Readers can use comments and sprint tools. Installing the plugin does not grant these permissions. If the CLI or plugin command is missing, install or update the CLI first using the [official guide](https://developers.openai.com/codex/cli/).
 
 ### Transcription and completed drafts
 
@@ -97,7 +101,7 @@ The agent should transcribe audio directly and review the video with timestamped
 
 Then choose a short video and provide its file or path, subject and spoken language. Ask for upload and draft text. Public text is drafted in Norwegian Bokmål and British English. If direct upload is unavailable, the agent can provide a browser upload link. For a video already uploaded, provide the existing draft link to avoid creating a duplicate.
 
-Everything the agent saves remains a private draft. Review the video, captions, names, facts and translation in the [website editor](https://www.contechnorway.com/redaktor) before publishing. Published pitches are public; videos and member summaries require membership. Published articles are public. [Revoke agent access](https://www.contechnorway.com/redaktor/agenter).
+Editorial content remains private drafts. Review the video, captions, names, facts and translation in the [website editor](https://www.contechnorway.com/redaktor) before publishing. Published pitches are public; videos and member summaries require membership. Published articles are public. [Revoke agent access](https://www.contechnorway.com/redaktor/agenter).
 
 ### Updates and existing Codex installations
 

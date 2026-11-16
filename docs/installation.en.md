@@ -4,9 +4,11 @@
 
 Contech Editorial is an editorial integration for video uploads and private drafts. Multiple AI assistants use the same MCP service. Follow only the instructions for your client: Codex has a plugin with a skill, while the other instructions connect directly to the service.
 
+See [promos, comments and sprints](sprint-mcp.en.md) for the new workflows. Readers can use sprints and comments; editorial uploads require contributor access. Readers should use `get_sprint_guide` for connection tests. Approve renewed consent when upgrading.
+
 ## Before you start
 
-You need a personal Contech account with a verified email address, the **Bidragsyter** (contributor) role and active company membership. Accept your invitation and confirm access to the [website editor](https://www.contechnorway.com/redaktor). Use the same email when connecting the agent.
+You need a personal Contech account with a verified email address, active company membership and the **Bidragsyter** (contributor) role for editorial work (reader access is sufficient for sprints and comments). Accept your invitation and confirm access to the [website editor](https://www.contechnorway.com/redaktor). Use the same email when connecting the agent.
 
 You also need access to your chosen client. Plans and organisation policies may restrict custom connections. Nobody needs access to the private website repository, database passwords or server keys.
 
