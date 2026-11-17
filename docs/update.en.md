@@ -36,19 +36,23 @@ codex plugin marketplace add https://github.com/Contech-Norway/contech-editorial
 codex plugin add contech-editorial@contech-norway
 ```
 
-Check the installation result: this release should end in `contech-editorial/0.3.0`. Restart the app and open a new chat. The package includes `editorial-drafts`, `sprint-preparation` and `sprint-review`.
+Check the installation result: this release should end in `contech-editorial/0.4.0`. Restart the app and open a new chat. The package includes `editorial-drafts`, `sprint-preparation` and `sprint-review`.
 
 ## 3. Renew authentication for sprints and comments
+
+[Installation and sign-in help](https://www.contechnorway.com/en/connect-ai). Version 0.4.0 requires the new server get_connection_status tool. After deployment, revoked tokens receive an OAuth challenge; automatic sign-in behaviour still needs client verification. Agent access distinguishes approved access from last observed MCP contact.
+
+Codex screenshots from 17 November show URL and header settings but no sign-in button. Previous advice to find that button was imprecise. For the verified separately configured server named contech-editorial, use the CLI fallback below. Do not uninstall the plugin or enter tokens.
 
 Do this when an old connection lacks the new permissions or has been revoked, not for every routine plugin update.
 
 1. Open [Agent access](https://www.contechnorway.com/redaktor/agenter) and revoke the relevant old grant unless already done. Other clients sharing that same grant may be affected; do not assume revocation is limited to one Mac.
-2. Return to Codex, open the plugin directory and select **Contech Editorial**. Start connection/sign-in if offered. The exact label is not visually verified for this app version. If it still shows an old connection, use its disconnect/reconnect action if available. Do not configure an extra manual MCP server alongside the plugin.
+2. Try a read-only MCP call in Codex and follow a sign-in prompt if offered. The inspected MCP settings page has no sign-in button. If no prompt appears and the server is separately configured, use the CLI fallback below. Do not configure an extra MCP server alongside the plugin.
 3. Sign in through the browser with your personal Contech account. Read the consent: comments are member-visible, sprint progress is private, and editorial publication happens on the website.
 4. Approve **Tillat agenttilgang og kommentarer / Allow agent access and comments** on the Contech page. Return to the app and open a new chat with the plugin.
 5. Send:
 
-> Fetch get_sprint_guide and check my access. Do not create or change content.
+> Fetch get_connection_status and check my access. Do not create or change content.
 
 The test must actually call the MCP tool and check whether comment access is enabled. A plugin version or a paraphrase of the guide does not establish OAuth connectivity.
 

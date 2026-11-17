@@ -130,7 +130,7 @@ Påstå bare at noe er lagret eller lastet opp når verktøyet har bekreftet det
 
 ### Første test og video
 
-Kjør [forbindelsestesten](#test-forbindelsen-før-opplasting) i testchatten. Kontroller i kjøringsloggen at `get_editorial_guide` faktisk ble kalt og svarte, før du prøver å lagre eller laste opp. Test deretter med startteksten under [Skills og første video](#skills-og-første-video).
+Kjør [forbindelsestesten](#test-forbindelsen-før-opplasting) i testchatten. Kontroller i kjøringsloggen at `get_connection_status` faktisk ble kalt og svarte, før du prøver å lagre eller laste opp. Test deretter med startteksten under [Skills og første video](#skills-og-første-video).
 
 MCP-tilkoblingen gir ikke i seg selv evnen til å analysere video, høre lyd eller overføre en chatfil. Disse egenskapene må testes separat i Copilot Studio. Bruk opplastingslenken hvis direkte overføring ikke støttes. Backend bestiller fortsatt Mux-undertekster automatisk; instruksjonen styrer agentens tekstkilde og slår ikke av denne funksjonen.
 
@@ -138,7 +138,7 @@ MCP-tilkoblingen gir ikke i seg selv evnen til å analysere video, høre lyd ell
 
 Send med tilkoblingen valgt:
 
-> Bruk Contech Editorial. Hent get_editorial_guide og oppsummer reglene. Ikke opprett eller endre innhold.
+> Bruk Contech Editorial. Hent get_connection_status og sjekk tilgangen min. Ikke opprett eller endre innhold.
 
 Kontroller at et faktisk verktøykall lykkes. Et svar basert på tekst fra denne veiledningen er ikke en forbindelsestest. Ingen skriverettigheter eller videoopplasting er bevist av dette ene lesekallet.
 

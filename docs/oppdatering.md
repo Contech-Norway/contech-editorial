@@ -37,23 +37,27 @@ codex plugin marketplace add https://github.com/Contech-Norway/contech-editorial
 codex plugin add contech-editorial@contech-norway
 ```
 
-Kontroller installasjonsmeldingen. For denne utgaven skal den vise en mappe som slutter på `contech-editorial/0.3.0`. Start appen på nytt og åpne en ny chat. Pakken inneholder `editorial-drafts`, `sprint-preparation` og `sprint-review`.
+Kontroller installasjonsmeldingen. For denne utgaven skal den vise en mappe som slutter på `contech-editorial/0.4.0`. Start appen på nytt og åpne en ny chat. Pakken inneholder `editorial-drafts`, `sprint-preparation` og `sprint-review`.
 
 ## 3. Ny autentisering for sprint og kommentarer
+
+[Samlet installasjonsside og hjelp](https://www.contechnorway.com/koble-til). Versjon 0.4.0 krever serverens nye get_connection_status-verktøy. Etter utrulling gir tilbakekalt token en OAuth-challenge; klientens automatiske innloggingsflyt må fortsatt verifiseres. Agenttilganger skiller mellom tilgang godkjent og sist observerte MCP-kontakt.
+
+Skjermbilder fra Codex 17. november viser at MCP-serverens innstillingsside har URL og headers, men ingen innloggingsknapp. Den tidligere instruksjonen om å finne en slik knapp var upresis. For den bekreftede separat konfigurerte serveren med navn contech-editorial: bruk CLI-reserveflyten nedenfor. Ikke avinstaller pluginen eller fyll inn tokens.
 
 Du trenger dette når den gamle koblingen mangler de nye tillatelsene, eller tilgangen er tilbakekalt. Ikke trekk tilbake en fungerende kobling ved hver ordinære pluginoppdatering.
 
 1. Åpne [Agenttilganger](https://www.contechnorway.com/redaktor/agenter) og trekk tilbake den aktuelle gamle agenttilgangen hvis det ikke allerede er gjort. Dette kan påvirke andre klienter som bruker akkurat samme grant; ikke anta at det bare gjelder én Mac.
-2. Gå tilbake til Codex, åpne pluginoversikten og velg **Contech Editorial**. Start tilkobling/innlogging hvis appen tilbyr dette. Det eksakte menynavnet er ikke verifisert i denne appversjonen. Hvis appen fortsatt viser en gammel tilkobling, bruk dens frakobling/ny tilkobling hvis tilgjengelig. Ikke opprett en ekstra manuelt konfigurert MCP-server ved siden av pluginen.
+2. Prøv et lesende MCP-kall fra Codex og følg innloggingsforespørselen hvis klienten tilbyr den. Den kontrollerte MCP-innstillingssiden har ingen innloggingsknapp. Hvis ingen forespørsel vises og serveren er separat konfigurert, bruk CLI-reserveflyten nedenfor. Ikke opprett en ekstra MCP-server ved siden av pluginen.
 3. Fullfør innloggingen i nettleseren med din personlige Contech-konto. Les samtykket: kommentarer deles med medlemmer, sprintfremdrift er privat, og redaksjonell publisering skjer på nettstedet.
 4. Godkjenn **Tillat agenttilgang og kommentarer / Allow agent access and comments** på Contech-siden. Gå tilbake til appen og åpne en ny chat med pluginen.
 5. Send:
 
-> Hent get_sprint_guide og sjekk tilgangen min. Ikke opprett eller endre innhold.
+> Hent get_connection_status og sjekk tilgangen min. Ikke opprett eller endre innhold.
 
 Testen må faktisk kalle MCP-verktøyet. Be agenten kontrollere om kommentartilgangen er aktiv. Pluginversjon og en tekstlig gjengivelse av guiden beviser ikke at OAuth fungerer.
 
-Hvis innlogging ikke tilbys, del skjermbilde av pluginens detaljside og eventuell feilmelding. Ikke del koder, tokens eller callback-URL. Vi har ikke verifisert appens innloggingsknapp visuelt: automatisk tilgang til Codex-vinduet var blokkert. Derfor viser denne guiden ingen konstruerte skjermbilder av appen.
+Hvis innlogging ikke tilbys, del skjermbilde av pluginens detaljside og eventuell feilmelding. Ikke del koder, tokens eller callback-URL. Brukerens skjermbilder bekrefter at den viste MCP-innstillingssiden mangler innloggingsknapp. Automatisk klientinnlogging etter 401 er fortsatt ikke ende-til-ende-verifisert.
 
 ### Bare for en separat CLI-konfigurert MCP-server
 

@@ -130,7 +130,7 @@ Only claim content was saved or uploaded when a tool has confirmed it.
 
 ### First test and video
 
-Run the [connection test](#test-before-uploading) in the test chat. Check the execution trace to confirm that `get_editorial_guide` was actually invoked and returned a response before attempting saves or uploads. Then test with the starter prompt under [Skills and your first video](#skills-and-your-first-video).
+Run the [connection test](#test-before-uploading) in the test chat. Check the execution trace to confirm that `get_connection_status` was actually invoked and returned a response before attempting saves or uploads. Then test with the starter prompt under [Skills and your first video](#skills-and-your-first-video).
 
 The MCP connection alone does not provide video analysis, audio understanding or chat-file transfer. Test these capabilities separately in Copilot Studio. Use the upload link if direct transfer is unavailable. The backend still requests Mux captions automatically; the instructions control the agent's transcript source and do not disable that behaviour.
 
@@ -138,7 +138,7 @@ The MCP connection alone does not provide video analysis, audio understanding or
 
 With the connection selected, send:
 
-> Use Contech Editorial. Fetch get_editorial_guide and summarise its rules. Do not create or change content.
+> Use Contech Editorial. Fetch get_connection_status and check my access. Do not create or change content.
 
 Check that an actual tool call succeeds. An answer copied from this guide is not a connection test. This read call alone does not prove write access or successful video upload.
 

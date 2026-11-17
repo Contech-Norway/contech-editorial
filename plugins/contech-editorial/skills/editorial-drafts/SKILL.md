@@ -9,7 +9,7 @@ Bruk pluginens Contech Editorial MCP-verktøy. Start med `get_editorial_guide` f
 
 ## Avgrens oppgaven
 
-- Ved tilkoblingstest: kall bare `get_editorial_guide` og rapporter faktisk resultat. Ikke opprett prøveinnhold eller last opp filer.
+- Ved tilkoblingstest: kall bare `get_connection_status` og rapporter faktisk resultat. Ikke opprett prøveinnhold eller last opp filer.
 - Ved eksisterende innhold: bruk `list_content` og `get_content` til å finne riktig objekt og siste revisjon før endring. Be om avklaring hvis flere treff passer.
 - Ved ny video: avklar hvilken fil og hvilket talespråk brukeren mener. Bruk kjent kontekst; spør bare om det som mangler. Ikke last opp en annen fil eller opprett en artikkel i tillegg uten at oppgaven tilsier det.
 - Ved selvstendig fagartikkel: arbeid fra brukerens kilder. Video er valgfritt; ikke opprett en video som plassholder.
@@ -51,3 +51,5 @@ Bruk pluginens Contech Editorial MCP-verktøy. Start med `get_editorial_guide` f
 - Hent `get_promo_status` i separate kall. Anbefalt lengde er 15–45 sekunder, hard grense 60. Oppgi behandlingsfeil, manglende undertekster og menneskelig kontrollbehov. Publisert promo blir stående mens erstatningen behandles.
 - Fullvideoens `save_caption_draft` gjelder ikke promo. Ikke lagre promoundertekster over fullvideoens undertekster. Dagens promo krever ferdig Mux-tekstspor; feil rettes i Mux før menneskelig gjennomgang.
 - Lever redaktørlenken med promostatus. Publisering eller avpublisering av promo gjøres av mennesket på nettstedet.
+
+Ved innloggingsfeil: følg klientens OAuth-forespørsel eller hjelpelenken på /koble-til. Ikke reaktiver tilbakekalt tilgang eller gjenta innholdsendringer automatisk. En vanlig pluginoppdatering krever ikke tilbakekalling.

@@ -4,6 +4,8 @@
 
 ## Norsk
 
+[Samlet installasjon og tilkoblingshjelp](https://www.contechnorway.com/koble-til). Plugin 0.4.0 må installeres etter at serverens tilkoblingsstatus er utrullet.
+
 **[Installasjonsveiledning: Codex, ChatGPT, Claude, GitHub Copilot og Microsoft Copilot Studio](docs/installasjon.md)**
 
 Contech Editorial gir KI-hjelp til videoopplasting og redaksjonelle tekstutkast for Contech Norway. Integrasjonen bruker en felles MCP-tjeneste som flere KI-assistenter kan koble seg til. Redaksjonelt innhold lagres som private utkast; kommentarer deles med medlemmer etter brukerens godkjenning, og sprintfremdrift er privat.
@@ -48,7 +50,7 @@ Agenten anbefales å transkribere direkte fra lyd og gjennomgå filmen med tidsk
 
 Med Contech Editorial-tilkoblingen valgt, send:
 
-> Hent get_editorial_guide og sjekk forbindelsen. Ikke opprett eller endre innhold.
+> Hent get_connection_status og sjekk forbindelsen. Ikke opprett eller endre innhold.
 
 Velg deretter en kort video, oppgi filen eller filbanen, tema og talespråk, og be om opplasting og tekstutkast. Offentlig tekst skrives på bokmål og britisk engelsk. Agenten kan gi en nettleserlenke hvis direkte filopplasting ikke støttes. Har du allerede lastet opp filmen, oppgi lenken til eksisterende utkast for å unngå en kopi.
 
@@ -65,6 +67,8 @@ Har du allerede en lokal katalog kalt `contech-norway`, kontroller `codex plugin
 Codex-pluginen er offentlig tilgjengelig her, men er ikke oppført i OpenAIs offentlige plugin-katalog. MCP-tjenesten krever personlig innlogging. Ingen databasepassord eller API-nøkler skal deles eller legges i pakken.
 
 ## English
+
+[Installation and connection help](https://www.contechnorway.com/en/connect-ai). Install plugin 0.4.0 after the server connection-status release.
 
 **[Installation guide: Codex, ChatGPT, Claude, GitHub Copilot and Microsoft Copilot Studio](docs/installation.en.md)**
 
@@ -99,7 +103,7 @@ The agent should transcribe audio directly and review the video with timestamped
 
 ### First test
 
-> Fetch get_editorial_guide and check the connection. Do not create or change content.
+> Fetch get_connection_status and check the connection. Do not create or change content.
 
 Then choose a short video and provide its file or path, subject and spoken language. Ask for upload and draft text. Public text is drafted in Norwegian Bokmål and British English. If direct upload is unavailable, the agent can provide a browser upload link. For a video already uploaded, provide the existing draft link to avoid creating a duplicate.
 

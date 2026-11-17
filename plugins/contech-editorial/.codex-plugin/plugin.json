@@ -1,6 +1,6 @@
 {
   "name": "contech-editorial",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Editorial drafts, video and promo uploads, member comments and guided sprint preparation for Contech Norway.",
   "author": {
     "name": "Contech Norway"
@@ -22,7 +22,7 @@
     "websiteURL": "https://www.contechnorway.com",
     "privacyPolicyURL": "https://www.contechnorway.com/personvern",
     "defaultPrompt": [
-      "Hent sprintveiledningen og sjekk forbindelsen uten å endre innhold.",
+      "Hent get_connection_status og sjekk forbindelsen uten å endre innhold.",
       "Hjelp meg å laste opp fullvideo og en kort promofilm som private utkast.",
       "La meg forberede meg på denne ukens sprint.",
       "Gjennomgå sprinten med promofilmer og kommentarer, én video om gangen."
