@@ -61,3 +61,11 @@ If sign-in is not offered, share a screenshot of the plugin detail page and the 
 ### Only for a separately configured CLI MCP server
 
 `codex mcp login` and `logout` exist, but must not be assumed to manage app-plugin connections. For a separate server, find its real name with `codex mcp list`, then use `codex mcp logout NAME` and `codex mcp login NAME`. Do not use this as a second installation method for the plugin.
+
+## Verified sign-in test, 17 November 2026
+
+Tested with Codex CLI `0.165.0-alpha.1.2` and a separate production test connection: consent → successful `get_connection_status` → revocation → rejected status call → normal `codex mcp login` with fresh consent → successful status call. No content was changed.
+
+The Codex client did not start sign-in automatically in this test; it reported an OAuth token refresh error. Normal CLI sign-in with a local callback listener worked. Avoid `--no-browser` for this walkthrough: that mode requires manual callback handling, and one attempt timed out during testing. Use a browser on the same computer as the CLI and leave the login command running until it reports success.
+
+This verifies the fallback for a separately configured MCP server. Automatic desktop-plugin sign-in remains unverified. Codex registered a new OAuth client during renewed sign-in; the old test grant remained revoked.

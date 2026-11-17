@@ -62,3 +62,11 @@ Hvis innlogging ikke tilbys, del skjermbilde av pluginens detaljside og eventuel
 ### Bare for en separat CLI-konfigurert MCP-server
 
 `codex mcp login` og `logout` finnes, men ikke anta at de kan administrere app-pluginens tilkobling. For en separat server: finn det faktiske navnet med `codex mcp list`, bruk det med `codex mcp logout NAVN` og `codex mcp login NAVN`. Ikke kjør dette som en ekstra installasjonsoppskrift for pluginen.
+
+## Verifisert innloggingstest 17. november 2026
+
+Testet med Codex CLI `0.165.0-alpha.1.2` og en separat testkobling mot produksjon: godkjenning → vellykket `get_connection_status` → tilbakekalling → avvist statuskall → vanlig `codex mcp login` med nytt samtykke → vellykket statuskall. Ingen innholdsendringer ble utført.
+
+Codex-klienten startet ikke ny innlogging automatisk i denne testen; den rapporterte feil ved fornyelse av OAuth-token. Den vanlige CLI-innloggingen med lokal callback-mottaker fungerte. Unngå `--no-browser` i denne veiledningen: denne modusen krever manuell håndtering av callback-adressen, og et forsøk utløp under testen. Bruk nettleseren på samme maskin som CLI-en, og la innloggingskommandoen kjøre til den melder at innloggingen lykkes.
+
+Dette verifiserer reserveflyten for en separat MCP-server. Automatisk innlogging i skrivebordspluginen er fortsatt ikke bekreftet. Codex registrerte en ny OAuth-klient ved ny innlogging; den gamle testtilgangen forble tilbakekalt.
