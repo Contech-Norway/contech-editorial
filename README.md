@@ -14,7 +14,7 @@ Se også [promo, kommentarer og sprint](docs/sprint-mcp.md). Versjon 0.3.0 kreve
 
 | Klient | Oppsett |
 | --- | --- |
-| Codex | Installer pluginen med redaktør-skillen `editorial-drafts` |
+| Codex | Installer pluginen med `editorial-drafts`, `sprint-preparation` og `sprint-review` |
 | ChatGPT | Koble til MCP-tjenesten som en egen tilkobling |
 | Claude / Claude Desktop | Legg til en egen connector |
 | Claude Code | Legg til MCP-tjenesten via terminalen |
@@ -56,7 +56,9 @@ Redaksjonelt innhold lagres som private utkast. Kontroller video, undertekster, 
 
 ### Oppdateringer og eksisterende Codex-installasjoner
 
-Dette repoet er distribusjonskilden for Codex-pluginen og veiledningene for de andre klientene. Nye versjoner skal få nytt versjonsnummer i manifestet. Oppdater katalogkilden med `codex plugin marketplace upgrade contech-norway`, oppdater pluginen via plugin-katalogen dersom en oppdatering tilbys, og start en ny samtale.
+**[Oppdater på en annen Mac og autentiser på nytt](docs/oppdatering.md)**
+
+Dette repoet er distribusjonskilden for Codex-pluginen og veiledningene for de andre klientene. Nye versjoner skal få nytt versjonsnummer i manifestet. Oppdater katalogkilden med `codex plugin marketplace upgrade contech-norway`, installer den oppdaterte pluginen med `codex plugin add contech-editorial@contech-norway`, og start en ny samtale.
 
 Har du allerede en lokal katalog kalt `contech-norway`, kontroller `codex plugin marketplace list` før du legger til denne kilden. Ikke slett en fungerende MCP-tilkobling før den nye plugin-tilkoblingen er kontrollert.
 
@@ -74,7 +76,7 @@ See [promos, comments and sprints](docs/sprint-mcp.en.md). Version 0.3.0 require
 
 | Client | Setup |
 | --- | --- |
-| Codex | Install the plugin with the `editorial-drafts` skill |
+| Codex | Install the plugin with `editorial-drafts`, `sprint-preparation` and `sprint-review` |
 | ChatGPT | Add a custom MCP connection |
 | Claude / Claude Desktop | Add a custom connector |
 | Claude Code | Add the MCP service through the terminal |
@@ -105,7 +107,9 @@ Editorial content remains private drafts. Review the video, captions, names, fac
 
 ### Updates and existing Codex installations
 
-This repository distributes the Codex plugin and guides for the other clients. New releases must increment the manifest version. Refresh the marketplace with `codex plugin marketplace upgrade contech-norway`, update the plugin through the plugin directory when offered, and start a new conversation.
+**[Update on another Mac and renew authentication](docs/update.en.md)**
+
+This repository distributes the Codex plugin and guides for the other clients. New releases must increment the manifest version. Refresh the marketplace with `codex plugin marketplace upgrade contech-norway`, install the updated plugin with `codex plugin add contech-editorial@contech-norway`, and start a new conversation.
 
 If a local marketplace called `contech-norway` already exists, inspect `codex plugin marketplace list` before adding this source. Keep any working standalone MCP connection until the new plugin connection has been verified.
 

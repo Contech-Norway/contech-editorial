@@ -33,6 +33,8 @@ En full videotest med opplasting, transkripsjon, lagring og gjennomgang gjenstå
 
 ## Codex
 
+**Allerede installert? [Oppdatering på en annen Mac og ny autentisering](oppdatering.md).**
+
 1. Installer eller oppdater Codex og CLI fra [OpenAIs installasjonsveiledning](https://learn.chatgpt.com/docs/codex/cli). Velg instruksjonen for operativsystemet ditt. Åpne terminalen på nytt og kontroller `codex --version` og `git --version`. Få hjelp med installasjonen hvis en kommando mangler.
 2. Kjør:
 

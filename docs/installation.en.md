@@ -33,6 +33,8 @@ A complete video acceptance test covering upload, transcription, saving and revi
 
 ## Codex
 
+**Already installed? [Update on another Mac and renew authentication](update.en.md).**
+
 1. Install or update Codex and its CLI using [OpenAI's installation guide](https://learn.chatgpt.com/docs/codex/cli) for your operating system. Reopen your terminal and check `codex --version` and `git --version`. Get installation help if either command is missing.
 2. Run:
 
