@@ -1,4 +1,6 @@
-# Update Contech Editorial and sign in again
+# Update Contech and sign in again
+
+For installation through the app, see [without Terminal](installation.en.md#without-terminal-what-is-available). The display name is now Contech; the technical ID is unchanged.
 
 [Norsk](oppdatering.md) · Checked against the local Codex CLI on 17 November 2026.
 

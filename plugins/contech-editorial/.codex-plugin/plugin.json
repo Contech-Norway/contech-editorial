@@ -9,7 +9,7 @@
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
-    "displayName": "Contech Editorial",
+    "displayName": "Contech",
     "shortDescription": "Video, promofilm, kommentarer og sprintforberedelse",
     "longDescription": "Last opp fullvideo og promo, lag private redaksjonelle utkast og forbered eller gjennomgå sprinter. Lesere og bidragsytere kan dele egne kommentarer etter godkjenning og lagre privat fremdrift. Redaksjonelt arbeid krever bidragsyter; publisering skjer på nettstedet.",
     "developerName": "Contech Norway",

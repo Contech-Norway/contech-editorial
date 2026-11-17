@@ -1,4 +1,8 @@
-# Contech Editorial
+# Contech
+
+Visningsnavn: **Contech**. Teknisk plugin-ID er fortsatt `contech-editorial`. Se [installasjon uten Terminal og begrensninger](docs/installasjon.md#uten-terminal-hva-er-tilgjengelig).
+
+Display name: **Contech**. The technical plugin ID remains `contech-editorial`. See [installation without Terminal and limitations](docs/installation.en.md#without-terminal-what-is-available).
 
 [Norsk](#norsk) · [English](#english)
 
@@ -8,7 +12,7 @@
 
 **[Installasjonsveiledning: Codex, ChatGPT, Claude, GitHub Copilot og Microsoft Copilot Studio](docs/installasjon.md)**
 
-Contech Editorial gir KI-hjelp til videoopplasting og redaksjonelle tekstutkast for Contech Norway. Integrasjonen bruker en felles MCP-tjeneste som flere KI-assistenter kan koble seg til. Redaksjonelt innhold lagres som private utkast; kommentarer deles med medlemmer etter brukerens godkjenning, og sprintfremdrift er privat.
+Contech gir KI-hjelp til videoopplasting og redaksjonelle tekstutkast for Contech Norway. Integrasjonen bruker en felles MCP-tjeneste som flere KI-assistenter kan koble seg til. Redaksjonelt innhold lagres som private utkast; kommentarer deles med medlemmer etter brukerens godkjenning, og sprintfremdrift er privat.
 
 Se også [promo, kommentarer og sprint](docs/sprint-mcp.md). Versjon 0.3.0 krever den nye tjenesteutvidelsen; eksisterende forbindelser må samtykke på nytt for kommentarer.
 
@@ -38,7 +42,7 @@ codex plugin marketplace add https://github.com/Contech-Norway/contech-editorial
 codex plugin add contech-editorial@contech-norway
 ```
 
-Start Codex på nytt. Åpne en ny samtale, skriv `@` og velg **Contech Editorial**. Fullfør eventuell innlogging med din egen Contech-konto og godkjenn agenttilgangen. Du må ha bekreftet e-post, aktivt bedriftsmedlemskap og rollen **Bidragsyter** for redaksjonelt arbeid. Lesere kan bruke kommentarer og sprintverktøy. Installasjonen gir ikke disse rettighetene.
+Start Codex på nytt. Åpne en ny samtale, skriv `@` og velg **Contech**. Fullfør eventuell innlogging med din egen Contech-konto og godkjenn agenttilgangen. Du må ha bekreftet e-post, aktivt bedriftsmedlemskap og rollen **Bidragsyter** for redaksjonelt arbeid. Lesere kan bruke kommentarer og sprintverktøy. Installasjonen gir ikke disse rettighetene.
 
 Hvis `codex` eller plugin-kommandoen mangler, få Codex CLI installert eller oppdatert før du fortsetter. [Offisiell Codex CLI-veiledning](https://developers.openai.com/codex/cli/).
 
@@ -48,7 +52,7 @@ Agenten anbefales å transkribere direkte fra lyd og gjennomgå filmen med tidsk
 
 ### Første test
 
-Med Contech Editorial-tilkoblingen valgt, send:
+Med Contech-tilkoblingen valgt, send:
 
 > Hent get_connection_status og sjekk forbindelsen. Ikke opprett eller endre innhold.
 
@@ -72,7 +76,7 @@ Codex-pluginen er offentlig tilgjengelig her, men er ikke oppført i OpenAIs off
 
 **[Installation guide: Codex, ChatGPT, Claude, GitHub Copilot and Microsoft Copilot Studio](docs/installation.en.md)**
 
-Contech Editorial provides AI assistance with video uploads and editorial drafts for Contech Norway. The integration uses a shared MCP service that multiple AI assistants can connect to. Editorial content remains private drafts; comments are shared with members after user approval, and sprint progress is private.
+Contech provides AI assistance with video uploads and editorial drafts for Contech Norway. The integration uses a shared MCP service that multiple AI assistants can connect to. Editorial content remains private drafts; comments are shared with members after user approval, and sprint progress is private.
 
 See [promos, comments and sprints](docs/sprint-mcp.en.md). Version 0.3.0 requires the new service extension; existing connections need renewed consent for comments.
 
@@ -93,7 +97,7 @@ This repository contains client guides, the Codex plugin connection configuratio
 
 ### Install the Codex plugin
 
-You need Codex, a Codex CLI version supporting `codex plugin`, and Git to fetch the repository. No GitHub account or access to the private website repository is required. Run the two commands above, restart Codex, open a new conversation and select **Contech Editorial** using `@`.
+You need Codex, a Codex CLI version supporting `codex plugin`, and Git to fetch the repository. No GitHub account or access to the private website repository is required. Run the two commands above, restart Codex, open a new conversation and select **Contech** using `@`.
 
 Complete sign-in and authorise access with your own Contech account. You need a verified email address, active company membership and the **Bidragsyter** (contributor) role for editorial work. Readers can use comments and sprint tools. Installing the plugin does not grant these permissions. If the CLI or plugin command is missing, install or update the CLI first using the [official guide](https://developers.openai.com/codex/cli/).
 

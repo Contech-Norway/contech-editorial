@@ -1,11 +1,11 @@
 ---
 name: editorial-drafts
-description: Last opp fullvideoer og korte promofilmer, og lag eller forbedre private video- og fagartikkelutkast for Contech Norway via Contech Editorial MCP. Bruk også for kontroll av forbindelsen og redaksjonell gjennomgang av eksisterende utkast.
+description: Last opp fullvideoer og korte promofilmer, og lag eller forbedre private video- og fagartikkelutkast for Contech Norway via Contech MCP. Bruk også for kontroll av forbindelsen og redaksjonell gjennomgang av eksisterende utkast.
 ---
 
-# Contech Editorial
+# Contech
 
-Bruk pluginens Contech Editorial MCP-verktøy. Start med `get_editorial_guide` før du skriver. Veiledningen på serveren er kilden til gjeldende språkregler, begreper og feltgrenser; ikke vedlikehold en egen kopi her.
+Bruk pluginens Contech MCP-verktøy. Start med `get_editorial_guide` før du skriver. Veiledningen på serveren er kilden til gjeldende språkregler, begreper og feltgrenser; ikke vedlikehold en egen kopi her.
 
 ## Avgrens oppgaven
 

@@ -1,4 +1,6 @@
-# Oppdater Contech Editorial og logg inn på nytt
+# Oppdater Contech og logg inn på nytt
+
+For installasjon fra appen, se [uten Terminal](installasjon.md#uten-terminal-hva-er-tilgjengelig). Visningsnavnet er nå Contech; teknisk ID er uendret.
 
 [English](update.en.md) · Kontrollert med lokal Codex CLI 17. november 2026.
 

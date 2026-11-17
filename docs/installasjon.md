@@ -1,10 +1,10 @@
-# Koble KI-assistenten din til Contech Editorial
+# Koble KI-assistenten din til Contech
 
 [English](installation.en.md) · Kontrollert mot leverandørdokumentasjon 26. oktober 2026.
 
-Contech Editorial er en redaktørintegrasjon for videoopplasting og private tekstutkast. Flere KI-assistenter bruker samme MCP-tjeneste. Velg bare oppskriften for klienten din: Codex har en egen plugin med skill, mens de øvrige oppskriftene kobler klienten direkte til tjenesten.
+Contech er en redaktørintegrasjon for videoopplasting og private tekstutkast. Flere KI-assistenter bruker samme MCP-tjeneste. Velg bare oppskriften for klienten din: Codex har en egen plugin med skill, mens de øvrige oppskriftene kobler klienten direkte til tjenesten.
 
-Se [promo, kommentarer og sprint](sprint-mcp.md) for de nye arbeidsflytene. Lesere kan bruke sprint og kommentarer; redaksjonell opplasting krever bidragsyter. Bruk `get_sprint_guide` til forbindelsestest som leser. Godkjenn nytt samtykke ved oppgradering.
+Se [promo, kommentarer og sprint](sprint-mcp.md) for de nye arbeidsflytene. Lesere kan bruke sprint og kommentarer; redaksjonell opplasting krever bidragsyter. Bruk `get_connection_status` til forbindelsestest som leser. Godkjenn nytt samtykke når utvidede rettigheter krever det.
 
 ## Før du begynner
 
@@ -25,13 +25,29 @@ En full videotest med opplasting, transkripsjon, lagring og gjennomgang gjenstå
 
 ## Felles tilkoblingsinformasjon
 
-- Navn: `Contech Editorial`
+- Navn: `Contech`
 - MCP-adresse: `https://www.contechnorway.com/api/mcp`
 - Transport: HTTP / Streamable HTTP
 - Innlogging: personlig OAuth via Contech Norway
 - Dersom OAuth-klientregistrering må velges: automatisk registrering (DCR), som den eksisterende tjenesten er satt opp for.
 
 ## Codex
+
+### Uten Terminal: hva er tilgjengelig?
+
+Visningsnavnet er **Contech**. Teknisk ID er fortsatt `contech-editorial`; eksisterende koblinger og kommandoer beholdes.
+
+**Katalogen finnes allerede på maskinen:** Åpne Plugins i appen, velg kilden Contech Norway, åpne Contech og velg installasjon dersom den ikke er installert. Følg innloggingen hvis klienten tilbyr den. Dette er [OpenAIs dokumenterte katalogflyt](https://learn.chatgpt.com/docs/plugins), ikke en ny ende-til-ende-test av Contech-grensesnittet.
+
+[Åpne Contech i Codex](codex://plugins/install/contech-editorial?marketplace=contech-norway) er en [dokumentert app-lenke](https://learn.chatgpt.com/docs/app/commands). Den krever at `contech-norway` allerede er kjent av appen. Den registrerer ikke GitHub-katalogen. Hvis du bare kommer til Plugins, er ikke katalogen nødvendigvis tilgjengelig.
+
+**Ny bruker uten katalogen:** En komplett førstegangsinstallasjon uten Terminal er foreløpig ikke verifisert. Contech ble ikke funnet i det offentlige pluginsøket under kontrollen 17. november 2026. Det offentlige GitHub-repoet er ikke det samme som en publisering i plugin-katalogen. Bruk oppsettet under med hjelp fra en administrator ved behov.
+
+**Felles arbeidsområde:** En administrator kan undersøke **Admin → Plugins → Add → Import marketplace**, med `https://github.com/Contech-Norway/contech-editorial` som kilde, tom Path og `main` som gren. Dette er en [dokumentert distribusjonsmulighet](https://learn.chatgpt.com/docs/enterprise/plugin-management), ikke ferdig konfigurert for Contech. Tilgjengelighet og OAuth må testes i arbeidsområdet. Pluginer med MCP kan være merket Desktop only. Dette gir ikke automatisk tilgang til brukere i andre arbeidsområder.
+
+**Innlogging og test:** Godkjenn med personlig Contech-konto når klienten ber om det, og kjør `get_connection_status`. `127.0.0.1` i callback betyr at svaret sendes tilbake til klienten på samme maskin. Installasjon alene bekrefter ikke innlogging. Vi har verifisert ny innlogging via vanlig CLI, men ikke automatisk ny innlogging i skrivebordspluginen. Se [reserveflyten](oppdatering.md).
+
+### Terminal / hjelp fra administrator
 
 **Allerede installert? [Oppdatering på en annen Mac og ny autentisering](oppdatering.md).**
 
@@ -43,7 +59,7 @@ codex plugin marketplace add https://github.com/Contech-Norway/contech-editorial
 codex plugin add contech-editorial@contech-norway
 ```
 
-3. Start Codex på nytt. Åpne en ny samtale, skriv `@` og velg **Contech Editorial**. Fullfør Contech-innloggingen hvis du blir bedt om det.
+3. Start Codex på nytt. Åpne en ny samtale, skriv `@` og velg **Contech**. Fullfør Contech-innloggingen hvis du blir bedt om det.
 4. Kjør forbindelsestesten nedenfor.
 
 Har du allerede katalogen `contech-norway`, sjekk `codex plugin marketplace list` før du legger til en ny kilde. Be om hjelp ved navnekonflikt; behold fungerende tilkobling. [Plugin-dokumentasjon](https://developers.openai.com/plugins/build/plugins).
@@ -96,7 +112,7 @@ Du trenger redigeringstilgang til en Copilot Studio-agent og Contech-tilgangen b
 
 | Felt | Verdi |
 | --- | --- |
-| Server name | `Contech Editorial` |
+| Server name | `Contech` |
 | Server description | Private video- og artikkelutkast for Contech Norway. Brukeren gjennomgår og publiserer på nettstedet. |
 | Server URL | `https://www.contechnorway.com/api/mcp` |
 | Authentication | `OAuth 2.0` |
@@ -138,7 +154,7 @@ MCP-tilkoblingen gir ikke i seg selv evnen til å analysere video, høre lyd ell
 
 Send med tilkoblingen valgt:
 
-> Bruk Contech Editorial. Hent get_connection_status og sjekk tilgangen min. Ikke opprett eller endre innhold.
+> Bruk Contech. Hent get_connection_status og sjekk tilgangen min. Ikke opprett eller endre innhold.
 
 Kontroller at et faktisk verktøykall lykkes. Et svar basert på tekst fra denne veiledningen er ikke en forbindelsestest. Ingen skriverettigheter eller videoopplasting er bevist av dette ene lesekallet.
 

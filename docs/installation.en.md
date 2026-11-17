@@ -1,10 +1,10 @@
-# Connect your AI assistant to Contech Editorial
+# Connect your AI assistant to Contech
 
 [Norsk](installasjon.md) · Checked against vendor documentation on 26 October 2026.
 
-Contech Editorial is an editorial integration for video uploads and private drafts. Multiple AI assistants use the same MCP service. Follow only the instructions for your client: Codex has a plugin with a skill, while the other instructions connect directly to the service.
+Contech is an editorial integration for video uploads and private drafts. Multiple AI assistants use the same MCP service. Follow only the instructions for your client: Codex has a plugin with a skill, while the other instructions connect directly to the service.
 
-See [promos, comments and sprints](sprint-mcp.en.md) for the new workflows. Readers can use sprints and comments; editorial uploads require contributor access. Readers should use `get_sprint_guide` for connection tests. Approve renewed consent when upgrading.
+See [promos, comments and sprints](sprint-mcp.en.md) for the new workflows. Readers can use sprints and comments; editorial uploads require contributor access. Readers should use `get_connection_status` for connection tests. Renew consent only when additional permissions are required.
 
 ## Before you start
 
@@ -25,13 +25,29 @@ A complete video acceptance test covering upload, transcription, saving and revi
 
 ## Shared connection details
 
-- Name: `Contech Editorial`
+- Name: `Contech`
 - MCP URL: `https://www.contechnorway.com/api/mcp`
 - Transport: HTTP / Streamable HTTP
 - Authentication: personal OAuth through Contech Norway
 - If asked how to register the OAuth client: automatic registration (DCR), supported by the existing service.
 
 ## Codex
+
+### Without Terminal: what is available?
+
+The display name is **Contech**. The technical ID remains `contech-editorial`; existing connections and commands are preserved.
+
+**Marketplace already on this computer:** Open Plugins in the app, select Contech Norway, open Contech and install it if needed. Follow sign-in if offered. This is [OpenAI’s documented directory flow](https://learn.chatgpt.com/docs/plugins), not a new end-to-end test of the Contech interface.
+
+[Open Contech in Codex](codex://plugins/install/contech-editorial?marketplace=contech-norway) is a [documented app link](https://learn.chatgpt.com/docs/app/commands). It requires the app to know `contech-norway` already. It does not register the GitHub marketplace. Landing on Plugins alone does not confirm marketplace availability.
+
+**New user without the marketplace:** A complete first installation without Terminal is not yet verified. Contech was not found in the public plugin search checked on 17 November 2026. A public GitHub repository is not a public-directory listing. Use the setup below with administrator assistance if needed.
+
+**Shared workspace:** An administrator can investigate **Admin → Plugins → Add → Import marketplace**, using `https://github.com/Contech-Norway/contech-editorial` as Source, an empty Path and branch `main`. This is a [documented distribution option](https://learn.chatgpt.com/docs/enterprise/plugin-management), not a configured Contech rollout. Availability and OAuth must be tested in that workspace. Plugins declaring MCP servers may be labelled Desktop only. This does not automatically distribute the plugin to other workspaces.
+
+**Sign-in and test:** Approve with your personal Contech account when prompted, then call `get_connection_status`. A `127.0.0.1` callback returns the response to the client on the same computer. Installation alone does not confirm sign-in. Normal CLI reauthentication has been verified; automatic desktop-plugin reauthentication has not. See the [fallback](update.en.md).
+
+### Terminal / administrator assistance
 
 **Already installed? [Update on another Mac and renew authentication](update.en.md).**
 
@@ -43,7 +59,7 @@ codex plugin marketplace add https://github.com/Contech-Norway/contech-editorial
 codex plugin add contech-editorial@contech-norway
 ```
 
-3. Restart Codex. In a new conversation, type `@`, choose **Contech Editorial**, and complete Contech sign-in if prompted.
+3. Restart Codex. In a new conversation, type `@`, choose **Contech**, and complete Contech sign-in if prompted.
 4. Run the connection test below.
 
 If `contech-norway` already exists, inspect `codex plugin marketplace list` first. Get help with name conflicts and retain a working connection. [Plugin documentation](https://developers.openai.com/plugins/build/plugins).
@@ -96,7 +112,7 @@ You need permission to edit a Copilot Studio agent and the Contech access descri
 
 | Field | Value |
 | --- | --- |
-| Server name | `Contech Editorial` |
+| Server name | `Contech` |
 | Server description | Private video and article drafts for Contech Norway. Users review and publish on the website. |
 | Server URL | `https://www.contechnorway.com/api/mcp` |
 | Authentication | `OAuth 2.0` |
@@ -138,7 +154,7 @@ The MCP connection alone does not provide video analysis, audio understanding or
 
 With the connection selected, send:
 
-> Use Contech Editorial. Fetch get_connection_status and check my access. Do not create or change content.
+> Use Contech. Fetch get_connection_status and check my access. Do not create or change content.
 
 Check that an actual tool call succeeds. An answer copied from this guide is not a connection test. This read call alone does not prove write access or successful video upload.
 
