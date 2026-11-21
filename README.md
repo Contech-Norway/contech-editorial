@@ -1,12 +1,18 @@
-# Contech Editorial
+# Contech
+
+Visningsnavn: **Contech**. Teknisk plugin-ID er fortsatt `contech-editorial`. Se [installasjon uten Terminal og begrensninger](docs/installasjon.md#uten-terminal-hva-er-tilgjengelig).
+
+Display name: **Contech**. The technical plugin ID remains `contech-editorial`. See [installation without Terminal and limitations](docs/installation.en.md#without-terminal-what-is-available).
 
 [Norsk](#norsk) · [English](#english)
 
 ## Norsk
 
+[Samlet installasjon og tilkoblingshjelp](https://www.contechnorway.com/koble-til). Plugin 0.4.0 må installeres etter at serverens tilkoblingsstatus er utrullet.
+
 **[Installasjonsveiledning: Codex, ChatGPT, Claude, GitHub Copilot og Microsoft Copilot Studio](docs/installasjon.md)**
 
-Contech Editorial gir KI-hjelp til videoopplasting og redaksjonelle tekstutkast for Contech Norway. Integrasjonen bruker en felles MCP-tjeneste som flere KI-assistenter kan koble seg til. Redaksjonelt innhold lagres som private utkast; kommentarer deles med medlemmer etter brukerens godkjenning, og sprintfremdrift er privat.
+Contech gir KI-hjelp til videoopplasting og redaksjonelle tekstutkast for Contech Norway. Integrasjonen bruker en felles MCP-tjeneste som flere KI-assistenter kan koble seg til. Redaksjonelt innhold lagres som private utkast; kommentarer deles med medlemmer etter brukerens godkjenning, og sprintfremdrift er privat.
 
 Se også [promo, kommentarer og sprint](docs/sprint-mcp.md). Versjon 0.3.0 krever den nye tjenesteutvidelsen; eksisterende forbindelser må samtykke på nytt for kommentarer.
 
@@ -14,7 +20,7 @@ Se også [promo, kommentarer og sprint](docs/sprint-mcp.md). Versjon 0.3.0 kreve
 
 | Klient | Oppsett |
 | --- | --- |
-| Codex | Installer pluginen med redaktør-skillen `editorial-drafts` |
+| Codex | Installer pluginen med `editorial-drafts`, `sprint-preparation` og `sprint-review` |
 | ChatGPT | Koble til MCP-tjenesten som en egen tilkobling |
 | Claude / Claude Desktop | Legg til en egen connector |
 | Claude Code | Legg til MCP-tjenesten via terminalen |
@@ -36,7 +42,7 @@ codex plugin marketplace add https://github.com/Contech-Norway/contech-editorial
 codex plugin add contech-editorial@contech-norway
 ```
 
-Start Codex på nytt. Åpne en ny samtale, skriv `@` og velg **Contech Editorial**. Fullfør eventuell innlogging med din egen Contech-konto og godkjenn agenttilgangen. Du må ha bekreftet e-post, aktivt bedriftsmedlemskap og rollen **Bidragsyter** for redaksjonelt arbeid. Lesere kan bruke kommentarer og sprintverktøy. Installasjonen gir ikke disse rettighetene.
+Start Codex på nytt. Åpne en ny samtale, skriv `@` og velg **Contech**. Fullfør eventuell innlogging med din egen Contech-konto og godkjenn agenttilgangen. Du må ha bekreftet e-post, aktivt bedriftsmedlemskap og rollen **Bidragsyter** for redaksjonelt arbeid. Lesere kan bruke kommentarer og sprintverktøy. Installasjonen gir ikke disse rettighetene.
 
 Hvis `codex` eller plugin-kommandoen mangler, få Codex CLI installert eller oppdatert før du fortsetter. [Offisiell Codex CLI-veiledning](https://developers.openai.com/codex/cli/).
 
@@ -46,9 +52,9 @@ Agenten anbefales å transkribere direkte fra lyd og gjennomgå filmen med tidsk
 
 ### Første test
 
-Med Contech Editorial-tilkoblingen valgt, send:
+Med Contech-tilkoblingen valgt, send:
 
-> Hent get_editorial_guide og sjekk forbindelsen. Ikke opprett eller endre innhold.
+> Hent get_connection_status og sjekk forbindelsen. Ikke opprett eller endre innhold.
 
 Velg deretter en kort video, oppgi filen eller filbanen, tema og talespråk, og be om opplasting og tekstutkast. Offentlig tekst skrives på bokmål og britisk engelsk. Agenten kan gi en nettleserlenke hvis direkte filopplasting ikke støttes. Har du allerede lastet opp filmen, oppgi lenken til eksisterende utkast for å unngå en kopi.
 
@@ -56,7 +62,9 @@ Redaksjonelt innhold lagres som private utkast. Kontroller video, undertekster, 
 
 ### Oppdateringer og eksisterende Codex-installasjoner
 
-Dette repoet er distribusjonskilden for Codex-pluginen og veiledningene for de andre klientene. Nye versjoner skal få nytt versjonsnummer i manifestet. Oppdater katalogkilden med `codex plugin marketplace upgrade contech-norway`, oppdater pluginen via plugin-katalogen dersom en oppdatering tilbys, og start en ny samtale.
+**[Oppdater på en annen Mac og autentiser på nytt](docs/oppdatering.md)**
+
+Dette repoet er distribusjonskilden for Codex-pluginen og veiledningene for de andre klientene. Nye versjoner skal få nytt versjonsnummer i manifestet. Oppdater katalogkilden med `codex plugin marketplace upgrade contech-norway`, installer den oppdaterte pluginen med `codex plugin add contech-editorial@contech-norway`, og start en ny samtale.
 
 Har du allerede en lokal katalog kalt `contech-norway`, kontroller `codex plugin marketplace list` før du legger til denne kilden. Ikke slett en fungerende MCP-tilkobling før den nye plugin-tilkoblingen er kontrollert.
 
@@ -64,9 +72,11 @@ Codex-pluginen er offentlig tilgjengelig her, men er ikke oppført i OpenAIs off
 
 ## English
 
+[Installation and connection help](https://www.contechnorway.com/en/connect-ai). Install plugin 0.4.0 after the server connection-status release.
+
 **[Installation guide: Codex, ChatGPT, Claude, GitHub Copilot and Microsoft Copilot Studio](docs/installation.en.md)**
 
-Contech Editorial provides AI assistance with video uploads and editorial drafts for Contech Norway. The integration uses a shared MCP service that multiple AI assistants can connect to. Editorial content remains private drafts; comments are shared with members after user approval, and sprint progress is private.
+Contech provides AI assistance with video uploads and editorial drafts for Contech Norway. The integration uses a shared MCP service that multiple AI assistants can connect to. Editorial content remains private drafts; comments are shared with members after user approval, and sprint progress is private.
 
 See [promos, comments and sprints](docs/sprint-mcp.en.md). Version 0.3.0 requires the new service extension; existing connections need renewed consent for comments.
 
@@ -74,7 +84,7 @@ See [promos, comments and sprints](docs/sprint-mcp.en.md). Version 0.3.0 require
 
 | Client | Setup |
 | --- | --- |
-| Codex | Install the plugin with the `editorial-drafts` skill |
+| Codex | Install the plugin with `editorial-drafts`, `sprint-preparation` and `sprint-review` |
 | ChatGPT | Add a custom MCP connection |
 | Claude / Claude Desktop | Add a custom connector |
 | Claude Code | Add the MCP service through the terminal |
@@ -87,7 +97,7 @@ This repository contains client guides, the Codex plugin connection configuratio
 
 ### Install the Codex plugin
 
-You need Codex, a Codex CLI version supporting `codex plugin`, and Git to fetch the repository. No GitHub account or access to the private website repository is required. Run the two commands above, restart Codex, open a new conversation and select **Contech Editorial** using `@`.
+You need Codex, a Codex CLI version supporting `codex plugin`, and Git to fetch the repository. No GitHub account or access to the private website repository is required. Run the two commands above, restart Codex, open a new conversation and select **Contech** using `@`.
 
 Complete sign-in and authorise access with your own Contech account. You need a verified email address, active company membership and the **Bidragsyter** (contributor) role for editorial work. Readers can use comments and sprint tools. Installing the plugin does not grant these permissions. If the CLI or plugin command is missing, install or update the CLI first using the [official guide](https://developers.openai.com/codex/cli/).
 
@@ -97,7 +107,7 @@ The agent should transcribe audio directly and review the video with timestamped
 
 ### First test
 
-> Fetch get_editorial_guide and check the connection. Do not create or change content.
+> Fetch get_connection_status and check the connection. Do not create or change content.
 
 Then choose a short video and provide its file or path, subject and spoken language. Ask for upload and draft text. Public text is drafted in Norwegian Bokmål and British English. If direct upload is unavailable, the agent can provide a browser upload link. For a video already uploaded, provide the existing draft link to avoid creating a duplicate.
 
@@ -105,7 +115,9 @@ Editorial content remains private drafts. Review the video, captions, names, fac
 
 ### Updates and existing Codex installations
 
-This repository distributes the Codex plugin and guides for the other clients. New releases must increment the manifest version. Refresh the marketplace with `codex plugin marketplace upgrade contech-norway`, update the plugin through the plugin directory when offered, and start a new conversation.
+**[Update on another Mac and renew authentication](docs/update.en.md)**
+
+This repository distributes the Codex plugin and guides for the other clients. New releases must increment the manifest version. Refresh the marketplace with `codex plugin marketplace upgrade contech-norway`, install the updated plugin with `codex plugin add contech-editorial@contech-norway`, and start a new conversation.
 
 If a local marketplace called `contech-norway` already exists, inspect `codex plugin marketplace list` before adding this source. Keep any working standalone MCP connection until the new plugin connection has been verified.
 

@@ -3,6 +3,8 @@ name: sprint-review
 description: Gå gjennom en Contech-sprint på diskusjonsdagen med korte promofilmer, medlemskommentarer og diskusjonsspørsmål, én video om gangen.
 ---
 
+Ved ren forbindelsestest: kall bare `get_connection_status` og rapporter faktisk tilgang uten å endre innhold.
+
 # Gjennomgå sprinten
 
 Hent `get_sprint_guide`, deretter valgt `get_sprint` med alle sider. Vis sprintnummer og datoer. Hent egen `get_sprint_progress` med `workflow=review`; denne er separat fra personlig forberedelse. Ved manglende tilgang må brukeren koble til på nytt og samtykke.
@@ -13,3 +15,5 @@ Hent `get_sprint_guide`, deretter valgt `get_sprint` med alle sider. Vis sprintn
 - Dersom brukeren vil kommentere: vis eksakt tekst og be om godkjenning før `save_video_comment`. Lagre på den aktuelle fullvideoens ID, ikke som en egen promosamtale. Velg brukerens aktive bedrift og ny idempotensnøkkel; behold samme argumenter/nøkkel ved retry.
 - Bare egne kommentarer kan endres/slettes. Hent siste revisjon; ved konflikt sammenlign på nytt. Slett bare på uttrykkelig beskjed. Moderering gjøres på nettstedet.
 - Til slutt: oppsummer hva som er gjennomgått og hvilke spørsmål som fortsatt står åpne. Ikke opprett felles referat, oppfølgingsoppgaver eller offentlig innhold uten en egen bestilling og tilgjengelige verktøy.
+
+Ved innloggingsfeil: følg klientens OAuth-forespørsel eller hjelpelenken på /koble-til. Ikke reaktiver tilbakekalt tilgang eller gjenta innholdsendringer automatisk. En vanlig pluginoppdatering krever ikke tilbakekalling.
