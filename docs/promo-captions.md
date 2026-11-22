@@ -9,9 +9,13 @@ Promo har egne undertekster og egen publisering. At fullvideoen er publisert, el
 1. Finn videoen og bruk den separate promofilens lyd og bilder. Agentens egen transkripsjon er anbefalt når klienten faktisk kan analysere mediet. Bruk Mux-tekst som kilde bare når brukeren ønsker det. Automatisk Mux-teksting bestilles fortsatt ved opplasting.
 2. Hent `get_promo_transcript`. Resultatet gir eksisterende forslag (eller ubehandlet Mux-tekst), `upload.nonce` og `expected_revision`.
 3. Lagre WebVTT med promoens egne tidskoder via `save_promo_caption_draft`: `id`, `expected_upload`, `expected_revision`, `language_code` og `vtt`. `save_caption_draft` gjelder bare hovedfilmen.
-4. Hent `get_promo_status` og lever redaktørlenken. Rapporter `published`, `current_upload_published` og `caption_import_status`. Ikke påstå at lagring av redaksjonstekst eller et privat undertekstforslag har endret spilleren.
+4. Vis hele det lagrede tekstforslaget med tidskoder i chatten og oppgi hvilken video og revisjon det gjelder. Hent `get_promo_status`. Forklar om promoen allerede er offentlig, og få uttrykkelig godkjenning av akkurat denne teksten. En generell bestilling om redigering er ikke godkjenning av den ferdige teksten.
+5. Etter godkjenning: kall `submit_promo_captions` med `id`, `expected_upload`, `approved_revision` og `user_confirmed: true`. Verktøyet sender den lagrede revisjonen direkte til spilleren. Ved endret tekst må brukeren godkjenne den nye revisjonen først.
+6. Hent `get_promo_status` og lever redaktørlenken. Rapporter `published`, `current_upload_published` og `caption_import_status`. Ikke påstå at lagring av redaksjonstekst eller et privat undertekstforslag har endret spilleren.
 
 ## Redaktørens arbeid
+
+Godkjenning og innsending av promoundertekstene kan gjøres i chatten som beskrevet over. Nettstedet tilbyr også en alternativ redigerings- og importflyt:
 
 Åpne videoens redaktørside og «Offentlig promovideo». Rediger WebVTT og lagre privat, eller gjennomgå agentens lagrede forslag. Kryss av for gjennomgang og velg «Send gjennomgåtte promoundertekster til spilleren». Dette sender akkurat den viste revisjonen til Mux. Hvis promoen allerede er publisert, endres også de offentlige undertekstene når importen er klar.
 
@@ -22,3 +26,7 @@ Ved samtidige endringer må siden lastes på nytt. En ny promoopplasting krever 
 ## Utrulling
 
 Migrasjonen `20261122193041_promo_caption_drafts.sql` må inn før serverkoden. Kjør Supabase-advisors etter migrasjonen. Pluginens oppdaterte skill distribueres etter serverdeploy. Lokale tester dekker tilgang, revisjoner, opplastingsbytte, immutable importkilder, signaturer og Mux-feil. En virkelig Mux-import og menneskelig gjennomgang må kontrolleres etter deploy; utviklingstester publiserer ingen medlemsvideoer.
+
+## Bekreftelse og tilgang
+
+Serveren krever bidragsytertilgang, riktig opplasting, nøyaktig revisjon og et eksplisitt bekreftelsesfelt. Klienten og skillen må sørge for at brukeren faktisk har sett og godkjent teksten i chatten; serveren kan ikke selv bevise samtalesamtykke. Agenten kan fortsatt ikke publisere promo eller øvrig innhold.

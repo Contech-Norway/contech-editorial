@@ -125,4 +125,6 @@ This public repository is separate from OpenAI's public plugin directory. The MC
 
 ### Promo caption editing (0.5.0)
 
-Deploy the server support for `get_promo_transcript` and `save_promo_caption_draft` before updating the plugin. See the [English promo caption guide](docs/promo-captions.en.md). A ready promo still needs separate human publication to appear in the video library.
+Deploy the server support for `get_promo_transcript`, `save_promo_caption_draft` and `submit_promo_captions` before updating the plugin. See the [English promo caption guide](docs/promo-captions.en.md). A ready promo still needs separate human publication to appear in the video library.
+
+Promoundertekster vises i chatten for godkjenning før agenten sender den konkrete revisjonen til spilleren. / Promo captions are shown in chat for approval before the agent submits that exact revision to the player.
