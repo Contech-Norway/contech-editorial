@@ -8,7 +8,7 @@ Display name: **Contech**. The technical plugin ID remains `contech-editorial`. 
 
 ## Norsk
 
-[Samlet installasjon og tilkoblingshjelp](https://www.contechnorway.com/koble-til). Plugin 0.4.0 må installeres etter at serverens tilkoblingsstatus er utrullet.
+[Samlet installasjon og tilkoblingshjelp](https://www.contechnorway.com/koble-til). Plugin 0.5.0 må installeres etter at serverens støtte for promoundertekster er utrullet. Se [redigering og publisering av kortpitch](docs/promo-captions.md).
 
 **[Installasjonsveiledning: Codex, ChatGPT, Claude, GitHub Copilot og Microsoft Copilot Studio](docs/installasjon.md)**
 
@@ -122,3 +122,9 @@ This repository distributes the Codex plugin and guides for the other clients. N
 If a local marketplace called `contech-norway` already exists, inspect `codex plugin marketplace list` before adding this source. Keep any working standalone MCP connection until the new plugin connection has been verified.
 
 This public repository is separate from OpenAI's public plugin directory. The MCP service requires personal authentication. Never share database passwords or API keys or include them in this package.
+
+### Promo caption editing (0.5.0)
+
+Deploy the server support for `get_promo_transcript`, `save_promo_caption_draft` and `submit_promo_captions` before updating the plugin. See the [English promo caption guide](docs/promo-captions.en.md). A ready promo still needs separate human publication to appear in the video library.
+
+Promoundertekster vises i chatten for godkjenning før agenten sender den konkrete revisjonen til spilleren. / Promo captions are shown in chat for approval before the agent submits that exact revision to the player.
